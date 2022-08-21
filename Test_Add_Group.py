@@ -6,7 +6,6 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
-from group import Group
 
 
 class TestAddGroup(unittest.TestCase):
@@ -20,7 +19,7 @@ class TestAddGroup(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_group_page(wd)
-        self.fill_group_creation(wd, Group(name="name1", header="onn", footer="dfg"))
+        self.fill_group_creation(wd, name="name1", header="onn", footer="dfg")
         self.submit_group_creation(wd)
         self.return_to_groups_page(wd)
         self.logout(wd)
@@ -37,19 +36,19 @@ class TestAddGroup(unittest.TestCase):
         # submit group creation
         wd.find_element("xpath", "//input[@value='Enter information']").click()
 
-    def fill_group_creation(self, wd, group):
+    def fill_group_creation(self, wd, name, header, footer):
         # submit group creation
         wd.find_element("xpath", "//input[@value='New group']").click()
         # fill group form
         wd.find_element("name", "group_name").click()
         wd.find_element("name", "group_name").clear()
-        wd.find_element("name", "group_name").send_keys(group.name)
+        wd.find_element("name", "group_name").send_keys(name)
         wd.find_element("name", "group_header").click()
         wd.find_element("name", "group_header").clear()
-        wd.find_element("name", "group_header").send_keys(group.header)
+        wd.find_element("name", "group_header").send_keys(header)
         wd.find_element("name", "group_footer").click()
         wd.find_element("name", "group_footer").clear()
-        wd.find_element("name", "group_footer").send_keys(group.footer)
+        wd.find_element("name", "group_footer").send_keys(footer)
 
     def open_group_page(self, wd):
         # open group page
@@ -87,7 +86,7 @@ class TestAddGroup(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_group_page(wd)
-        self.fill_group_creation(wd, Group(name="", header="", footer=""))
+        self.fill_group_creation(wd, name="", header="", footer="")
         self.submit_group_creation(wd)
         self.return_to_groups_page(wd)
         self.logout(wd)
