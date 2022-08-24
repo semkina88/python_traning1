@@ -70,10 +70,10 @@ class AddNewContact(unittest.TestCase):
         wd.find_element("name", "notes").clear()
         wd.find_element("name", "notes").send_keys("hjfjfj")
         wd.find_element("xpath", "//input[@value='Enter']").click()
-        # return to Contact page
-        wd.find_element("link_text", "home page").click()
+        # return to home page
+        wd.find_element("link text", "home page").click()
         # Logout
-        wd.find_element("link_text", "Logout").click()
+        wd.find_element("link text", "Logout").click()
 
     def is_element_present(self, how, what):
         try:
