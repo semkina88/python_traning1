@@ -1,16 +1,13 @@
 from selenium import webdriver
-
+from fixture.session import SessionHelper
 
 class Application:
 
     def __init__(self):
         self.wd = webdriver.Firefox()
         # self.wd.get('http://localhost/addressbook/group.php')
-        self.wd.implicitly_wait(30)
-
-    def logout(self):
-        wd = self.wd
-        wd.find_element("link text", "Logout").click()
+        self.wd.implicitly_wait(60)
+        self.session = SessionHelper(self)
 
 
     def return_to_groups_page(self):
@@ -43,15 +40,6 @@ class Application:
         wd = self.wd
         wd.find_element("link text", "groups").click()
 
-    def login(self, username, password):
-        wd = self.wd
-        self.open_home_page()
-        wd.find_element("name", "user").click()
-        wd.find_element("name", "user").clear()
-        wd.find_element("name", "user").send_keys(username)
-        wd.find_element("name", "pass").clear()
-        wd.find_element("name", "pass").send_keys(password)
-        wd.find_element("xpath", "//input[@value='Login']").click()
 
     def open_home_page(self):
         wd = self.wd
@@ -68,14 +56,15 @@ class ApplicationContact:
         self.wd = webdriver.Firefox()
         # self.wd.get('http://localhost/addressbook/group.php')
         self.wd.implicitly_wait(30)
+        self.session = SessionHelper(self)
 
-    def logout(self):
+    def open_home_page(self):
         wd = self.wd
-        wd.find_element("link text", "Logout").click()
+        wd.get("http://localhost/addressbook/")
 
-    def return_home_page(self):
+    def open_contact_page(self):
         wd = self.wd
-        wd.find_element("link text", "home page").click()
+        wd.find_element("add new").click()
 
     def Creat_new_contact(self, Contact):
         wd = self.wd
@@ -141,25 +130,9 @@ class ApplicationContact:
         wd.find_element("xpath", "//input[@value='Enter']").click()
         self.return_home_page()
 
-    def open_contact_page(self):
+    def return_home_page(self):
         wd = self.wd
-        wd.find_element("add new").click()
-
-
-    def login(self, username, password):
-        wd = self.wd
-        self.open_home_page()
-        wd.find_element("name", "user").click()
-        wd.find_element("name", "user").clear()
-        wd.find_element("name", "user").send_keys(username)
-        wd.find_element("name", "pass").clear()
-        wd.find_element("name", "pass").send_keys(password)
-        wd.find_element("xpath", "//input[@value='Login']").click()
-
-
-    def open_home_page(self):
-        wd = self.wd
-        wd.get("http://localhost/addressbook/")
+        wd.find_element("link text", "home page").click()
 
     def deastroy(self):
         self.wd.quit()
