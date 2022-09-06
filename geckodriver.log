@@ -1854,3 +1854,49 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: http://l
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
 1662458998742	Marionette	INFO	Stopped listening on port 65473
 JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953704
+1662463004108	geckodriver	INFO	Listening on 127.0.0.1:53778
+1662463006939	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53779" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofile1UnVOX"
+1662463008508	Marionette	INFO	Marionette enabled
+1662463008533	Marionette	INFO	Listening on port 53804
+WebDriver BiDi listening on ws://localhost:53779
+Read port: 53804
+1662463009041	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofile1UnVOX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53779/devtools/browser/d207e8d1-09d2-4cc1-a78b-17e2f9ca0897
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.error: services.settings: 
+  main/query-stripping Signature failed  InvalidSignatureError: Invalid content signature (main/query-stripping)
+console.error: services.settings: 
+  main/query-stripping local data was corrupted
+console.warn: services.settings: main/query-stripping Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/query-stripping Signature failed again InvalidSignatureError: Invalid content signature (main/query-stripping)
+1662463079878	Marionette	INFO	Stopped listening on port 53804
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953706
+1662463385320	geckodriver	INFO	Listening on 127.0.0.1:54493
+1662463388182	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54494" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofilezRDGEl"
+1662463389137	Marionette	INFO	Marionette enabled
+1662463389148	Marionette	INFO	Listening on port 54505
+WebDriver BiDi listening on ws://localhost:54494
+Read port: 54505
+1662463389550	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofilezRDGEl\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54494/devtools/browser/96187861-b5e3-4b62-b71e-7184fd8cb634
+1662463513529	Marionette	INFO	Stopped listening on port 54505
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953705
+1662463698099	geckodriver	INFO	Listening on 127.0.0.1:54933
+1662463700957	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54934" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofile6ea4Wo"
+1662463702589	Marionette	INFO	Marionette enabled
+1662463702613	Marionette	INFO	Listening on port 54946
+WebDriver BiDi listening on ws://localhost:54934
+Read port: 54946
+1662463703334	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofile6ea4Wo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54934/devtools/browser/2986bdc8-2746-40e7-ba1e-166bc380cf0b
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953705
+1662463726810	Marionette	INFO	Stopped listening on port 54946
+Marionette threw an error: TypeError: browsingContext.currentWindowGlobal is null
+getMarionetteCommandsActorProxy/get/<@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:337:29
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
