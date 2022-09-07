@@ -37,6 +37,15 @@ class GroupHelper:
         wd.find_element("xpath", "//input[@value='Delete group(s)']").click()
         self.return_to_groups_page()
 
+    def edit_first_group(self):
+        wd = self.app.wd
+        self.open_group_page()
+        # select first group
+        wd.find_element("name", "selected[]").click()
+        wd.find_element("name", "Edit").click()
+        # submit deletion
+        wd.find_element("xpath", "//input[@value='Delete group(s)']").click()
+        self.return_to_groups_page()
 
     def open_group_page(self):
         wd = self.app.wd
