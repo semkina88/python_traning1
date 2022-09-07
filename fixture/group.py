@@ -34,7 +34,7 @@ class GroupHelper:
         # select first group
         wd.find_element("name", "selected[]").click()
         # submit deletion
-        wd.find_element("name", "delete").click()
+        wd.find_element("xpath", "//input[@value='Delete group(s)']").click()
         self.return_to_groups_page()
 
 
