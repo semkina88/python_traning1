@@ -10,10 +10,13 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element("link text", "home").click()
 
-    def create(self):
+    def create(self, contact):
         wd = self.app.wd
         # init new contact
         wd.find_element("link text", "add new").click()
+        self.fill_contact_form(contact)
+        self.submit_contact_creation()
+        # self.return_home_page()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
