@@ -17,6 +17,7 @@ class ContactHelper:
         self.fill_contact_form(contact)
         self.submit_contact_creation()
         # self.return_home_page()
+
     def change_field_value(self, field_name, text):
         wd = self.app.wd
         if text is not None:
@@ -62,7 +63,6 @@ class ContactHelper:
         wd.find_element("name", "selected[]").click()
 
 
-    # self.return_home_page()
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
