@@ -16,13 +16,14 @@ class SessionHelper:
         wd = self.app.wd
         wd.find_element("link text", "Logout").click()
 
-    def is_logged_in(self):
-        wd = self.app.wd
-        return len(wd.find_elements("link text", "logout")) > 0
-
     def ensure_logout(self):
+        wd = self.app.wd
         if self.is_logged_in():
             self.logout()
+
+    def is_logged_in(self):
+        wd = self.app.wd
+        return len(wd.find_elements("link text", "Logout")) > 0
 
     def is_logged_in_as(self, username):
         wd = self.app.wd
