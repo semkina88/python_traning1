@@ -57,6 +57,7 @@ class ContactHelper:
         # submit deletion
         wd.find_element("xpath", "//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
+        self.open_home_page()
 
     def select_first_contact(self, wd):
         wd = self.app.wd
@@ -83,6 +84,7 @@ class ContactHelper:
     def return_home_page(self):
         wd = self.app.wd
         wd.find_element("link text", "home page").click()
+
     def count(self):
         wd = self.app.wd
         self.open_home_page()

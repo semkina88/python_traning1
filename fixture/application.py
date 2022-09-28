@@ -9,7 +9,6 @@ class Application:
     def __init__(self):
         self.wd = webdriver.Firefox()
         # self.wd.get('http://localhost/addressbook/group.php')
-        self.wd.implicitly_wait(10)
         self.open_home_page()
         self.session = SessionHelper(self)
         self.contact = ContactHelper(self)
