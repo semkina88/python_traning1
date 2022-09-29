@@ -1,3 +1,5 @@
+from model.class_for_test import Contact
+
 class ContactHelper:
     def __init__(self, app):
         self.app = app
@@ -8,7 +10,8 @@ class ContactHelper:
 
     def open_home_page(self):
         wd = self.app.wd
-        wd.find_element("link text", "home").click()
+        if not (wd.current_url.endswith("/")):
+            wd.find_element("link text", "home").click()
 
     def create(self, contact):
         wd = self.app.wd
