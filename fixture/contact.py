@@ -1,4 +1,5 @@
 from model.class_for_test import Contact
+from selenium.webdriver.common.by import By
 
 class ContactHelper:
     def __init__(self, app):
@@ -92,3 +93,25 @@ class ContactHelper:
         wd = self.app.wd
         self.open_home_page()
         return len(wd.find_elements("name", "selected[]"))
+
+    # def get_contact_list(self):
+    #     wd = self.app.wd
+    #     self.open_home_page()
+    #     contacts = []
+    #     elements = wd.find_elements(By.CSS_SELECTOR,"#maintable > tbody > tr > td")[1:]
+    #     for element in elements:
+    #         id = element.find_element(By.CSS_SELECTOR,"input").get_attribute('id')
+    #         contacts.append(Contact(id=id))
+    #     return contacts
+
+    def get_contact_list(self):
+        wd = self.app.wd
+        self.app.open_home_page()
+        contacts = []
+        for element in wd.find_elements(By.CSS_SELECTOR, "tr[name=entry]"):
+            cells = element.find_elements(By.TAG_NAME, "td")
+            firstname = cells[2].text
+            lastname = cells[1].text
+            id = element.find_element("name", "selected[]").get_attribute("value")
+            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
+        return contacts
