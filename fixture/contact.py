@@ -54,71 +54,60 @@ class ContactHelper:
         wd.find_element("xpath", "//input[@value='Enter']").click()
         self.return_home_page()
 
+    def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_index(index)
+        wd.find_element("xpath", "//input[@value='Delete']").click()
+        wd.switch_to.alert.accept()
+        self.open_home_page()
+        self.contact_cache = None
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements("name", "selected[]")[index].click()
+
     # def delete_first_contact(self):
-    #     self.delete_contact_by_index(0)
-
-    # def delete_contact_by_index(self, index):
     #     wd = self.app.wd
-    #     self.app.open_home_page()
-    #     self.select_contact_by_index(index)
-    #     wd.find_element("xpath", "//input[@value='Delete']").click()
-    #     wd.switch_to.alert.accept()
     #     self.open_home_page()
-    #     self.contact_cache = None
-
-    # def delete_contact_by_id(self, id):
-    #     wd = self.app.wd
-    #     self.app.open_home_page()
-    #     self.select_contact_by_id(id)
+    #     self.select_first_contact(wd)
     #     submit deletion
         # wd.find_element("xpath", "//input[@value='Delete']").click()
         # wd.switch_to.alert.accept()
         # self.open_home_page()
         # self.contact_cache = None
 
-    def delete_first_contact(self):
-        wd = self.app.wd
-        self.open_home_page()
-        self.select_first_contact(wd)
-        # submit deletion
-        wd.find_element("xpath", "//input[@value='Delete']").click()
-        wd.switch_to.alert.accept()
-        self.open_home_page()
-
     def select_first_contact(self, wd):
         wd = self.app.wd
         wd.find_element("name", "selected[]").click()
 
-    # def select_contact_by_index(self, index):
-    #     wd = self.app.wd
-    #     wd.find_elements("name", "selected[]")[index].click()
 
-    # def select_contact_by_id(self, id):
-    #     wd = self.app.wd
-    #     wd.find_elements(By.CSS_SELECTOR, "input[value='%s']" % id).click()
 
-    # def modify_first_contact(self):
-    #     self.modify_contact_by_index(0)
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0)
 
-    # def modify_contact_by_index(self, index, new_contact_data):
-    #     wd = self.app.wd
-    #     self.open_home_page()
-    #     wd.find_element(By.CSS_SELECTOR, "tr[name='entry'] a[href='edit.php?id=%s'" % id).click()
-        # self.select_contact_by_index(index)
-        # wd.find_element("xpath", "//img[@alt='Edit']").click()
-        # self.fill_contact_form(new_contact_data)
-        # wd.find_element("name", "update").click()
-        # self.return_home_page()
-        # self.contact_cache = None
-
-    def modify_first_contact(self, new_contact_data):
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
-        self.select_first_contact(wd)
+        self.select_contact_by_index(index)
         wd.find_element("xpath", "//img[@alt='Edit']").click()
         self.fill_contact_form(new_contact_data)
         wd.find_element("name", "update").click()
         self.return_home_page()
+        self.contact_cache = None
+
+    # def modify_first_contact(self, new_contact_data):
+    #     wd = self.app.wd
+    #     self.open_home_page()
+    #     self.select_first_contact(wd)
+    #     wd.find_element("xpath", "//img[@alt='Edit']").click()
+    #     self.fill_contact_form(new_contact_data)
+    #     wd.find_element("name", "update").click()
+    #     self.return_home_page()
+    #     self.contact_cache = None
 
     def edit(self, contact):
         wd = self.app.wd
@@ -150,5 +139,5 @@ class ContactHelper:
                 firstname = cells[2].text
                 lastname = cells[1].text
                 id = element.find_element("name", "selected[]").get_attribute("id")
-                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
+                self.contact_cache.append(Contact(firstname=firstname, lastname=firstname, id=id))
         return list(self.contact_cache)
