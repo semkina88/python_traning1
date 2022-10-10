@@ -107,12 +107,12 @@ class ContactHelper:
     def get_contact_list(self):
         if self.contact_cache is None:
             wd = self.app.wd
-            self.app.open_home_page()
+            self.open_home_page()
             self.contact_cache = []
             for element in wd.find_elements(By.CSS_SELECTOR, "tr[name=entry]"):
                 cells = element.find_elements(By.TAG_NAME, "td")
                 firstname = cells[2].text
                 lastname = cells[1].text
-                id = element.find_element("name", "selected[]").get_attribute("value")
+                id = element.find_element("name", "selected[]").get_attribute("id")
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
         return list(self.contact_cache)
