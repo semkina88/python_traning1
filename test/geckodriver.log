@@ -5851,3 +5851,53 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: http://l
 1665425375849	Marionette	INFO	Stopped listening on port 57401
 JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953700
 JavaScript error: , line 0: OperationError: Could not move temporary file(C:\Users\OLGASE~1\AppData\Local\Temp\rust_mozprofileNT2VIy\sessionCheckpoints.json.tmp) to destination(C:\Users\OLGASE~1\AppData\Local\Temp\rust_mozprofileNT2VIy\sessionCheckpoints.json)
+1665425428846	geckodriver	INFO	Listening on 127.0.0.1:57652
+1665425431781	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57653" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofiles6tOTK"
+1665425432457	Marionette	INFO	Marionette enabled
+1665425432467	Marionette	INFO	Listening on port 57694
+Read port: 57694
+WebDriver BiDi listening on ws://127.0.0.1:57653
+1665425432835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofiles6tOTK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57653/devtools/browser/7d045c50-def3-4b5b-b567-d8fb5748b8b6
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1665425438975	Marionette	INFO	Stopped listening on port 57694
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953700
+JavaScript error: resource://devtools/client/jsonview/Sniffer.jsm, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+1665425545763	geckodriver	INFO	Listening on 127.0.0.1:58002
+1665425548687	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58003" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofileCFTMsY"
+1665425559375	Marionette	INFO	Marionette enabled
+1665425559381	Marionette	INFO	Listening on port 58078
+Read port: 58078
+WebDriver BiDi listening on ws://127.0.0.1:58003
+1665425559589	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 768))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 420))
+1665425652236	geckodriver	INFO	Listening on 127.0.0.1:58319
+1665425655145	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58320" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofileFJahUq"
+1665425655620	Marionette	INFO	Marionette enabled
+1665425655626	Marionette	INFO	Listening on port 58333
+Read port: 58333
+WebDriver BiDi listening on ws://127.0.0.1:58320
+1665425655843	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofileFJahUq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58320/devtools/browser/c0adac6a-7e2c-4a5e-be68-e0192394ece8
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1665425660415	Marionette	INFO	Stopped listening on port 58333
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953700
+1665425691086	geckodriver	INFO	Listening on 127.0.0.1:58508
+1665425694039	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58509" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofiletzU1wK"
+1665425694682	Marionette	INFO	Marionette enabled
+1665425694692	Marionette	INFO	Listening on port 58520
+Read port: 58520
+WebDriver BiDi listening on ws://127.0.0.1:58509
+1665425695025	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OLGASE~1\\AppData\\Local\\Temp\\rust_mozprofiletzU1wK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58509/devtools/browser/feb0ae81-de35-4837-abe9-48b5b1d1eef2
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1665425798917	Marionette	INFO	Stopped listening on port 58520
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953682
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: OperationError: Could not move temporary file(C:\Users\OLGASE~1\AppData\Local\Temp\rust_mozprofiletzU1wK\sessionCheckpoints.json.tmp) to destination(C:\Users\OLGASE~1\AppData\Local\Temp\rust_mozprofiletzU1wK\sessionCheckpoints.json)

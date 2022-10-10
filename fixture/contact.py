@@ -85,7 +85,6 @@ class ContactHelper:
         wd.find_element("name", "selected[]").click()
 
 
-
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
@@ -139,5 +138,5 @@ class ContactHelper:
                 firstname = cells[2].text
                 lastname = cells[1].text
                 id = element.find_element("name", "selected[]").get_attribute("id")
-                self.contact_cache.append(Contact(firstname=firstname, lastname=firstname, id=id))
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
         return list(self.contact_cache)
