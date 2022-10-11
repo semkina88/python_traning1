@@ -68,16 +68,6 @@ class GroupHelper:
         wd = self.app.wd
         wd.find_elements("name", "selected[]")[index].click()
 
-    def edit(self, group):
-        wd = self.app.wd
-        self.open_group_page()
-        self.select_first_group()
-        wd.find_element("xpath", "//input[@value='Edit group']").click()
-        self.fill_group_form(group)
-        # submit edit
-        wd.find_element("xpath", "//input[@value='Update']").click()
-        self.return_to_groups_page()
-
 
     def open_group_page(self):
         wd = self.app.wd
