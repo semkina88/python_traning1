@@ -11,13 +11,13 @@ class GroupHelper:
 
     def submit_group_creation(self):
         wd = self.app.wd
-        wd.find_element("xpath", "//input[@value='Enter information']").click()
+        wd.find_element(By.CSS_SELECTOR, 'input[type="submit"]').click()
 
     def create(self, group):
         wd = self.app.wd
         self.open_group_page()
         # init group creation
-        wd.find_element("xpath", "//input[@value='New group']").click()
+        wd.find_element(By.CSS_SELECTOR, 'input[name="new"]').click()
         # fill group form
         self.fill_group_form(group)
         self.submit_group_creation()
@@ -61,7 +61,7 @@ class GroupHelper:
         self.open_group_page()
         self.select_group_by_index(index)
         # submit deletion
-        wd.find_element("xpath", "//input[@value='Delete group(s)']").click()
+        wd.find_element(By.CSS_SELECTOR, 'input[name="delete"]').click()
         self.return_to_groups_page()
         self.group_cache = None
     def select_group_by_index(self, index):

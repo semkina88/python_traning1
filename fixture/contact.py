@@ -52,7 +52,7 @@ class ContactHelper:
 
     def submit_contact_creation(self):
         wd = self.app.wd
-        wd.find_element("xpath", "//input[@value='Enter']").click()
+        wd.find_element(By.CSS_SELECTOR, 'input[type="submit"]').click()
         self.return_home_page()
 
     def delete_first_contact(self):
@@ -62,7 +62,7 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         self.select_contact_by_index(index)
-        wd.find_element("xpath", "//input[@value='Delete']").click()
+        wd.find_element(By.CSS_SELECTOR, 'input[type="button"]').click()
         wd.switch_to.alert.accept()
         self.open_home_page()
         self.contact_cache = None
@@ -93,7 +93,7 @@ class ContactHelper:
 
     def find_modify_button_by_index(self, index):
         wd = self.app.wd
-        wd.find_elements("xpath", "//img[@alt='Edit']")[index].click()
+        wd.find_elements(By.CSS_SELECTOR, 'img[title="Edit"]')[index].click()
 
     def return_home_page(self):
         wd = self.app.wd
