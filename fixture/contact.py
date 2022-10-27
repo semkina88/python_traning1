@@ -158,9 +158,13 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contact_view_by_index(index)
         text = wd.find_element("id", "content").text
-        home_phone = re.search("H: (.*)", text).group(1)
-        cell_phone = re.search("M: (.*)", text).group(1)
-        work_phone = re.search("W: (.*)", text).group(1)
-        secondary_phone = re.search("P: (.*)", text).group(1)
+        home_phone = re.search("H: (.*)", text).group(1) if "H: " in text else ""
+        cell_phone = re.search("M: (.*)", text).group(1) if "W: " in text else ""
+        work_phone = re.search("W: (.*)", text).group(1) if "M: " in text else ""
+        secondary_phone = re.search("P: (.*)", text).group(1) if "P: " in text else ""
+        content = wd.find_element("id", "content")
+        emails = [i.text for i in content.find_elements(By.TAG_NAME,"a")]
+        while len(emails) < 3:
+            emails.append("")
         return Contact(home_phone=home_phone, cell_phone=cell_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
