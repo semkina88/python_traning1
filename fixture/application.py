@@ -1,17 +1,26 @@
 from selenium import webdriver
-from fixture.session import SessionHelper
+
 from fixture.contact import ContactHelper
 from fixture.group import GroupHelper
+from fixture.session import SessionHelper
+
 
 class Application:
 
-    def __init__(self):
-        self.wd = webdriver.Firefox()
-        # self.wd.get('http://localhost/addressbook/group.php')
+    def __init__(self, browser, base_url):
+        if browser == "firefox":
+            self.wd = webdriver.Firefox()
+        elif browser == "chrome":
+            self.wd = webdriver.Chrome()
+        elif browser == "edge":
+            self.wd = webdriver.Edge()
+        else:
+            raise ValueError("Unrecognised browser %s" % browser)
+        self.base_url = base_url
         self.open_home_page()
         self.session = SessionHelper(self)
-        self.contact = ContactHelper(self)
         self.group = GroupHelper(self)
+        self.contact = ContactHelper(self)
 
     def is_valid(self):
         try:
@@ -22,7 +31,9 @@ class Application:
 
     def open_home_page(self):
         wd = self.wd
-        wd.get("http://localhost/addressbook/")
+        # if not (wd.current_url.endswith('/addressbook/') and len(wd.find_elements("text", "Last name")) > 0):
+        wd.get(self.base_url)
+        # wd.get("http://localhost/addressbook/index.php")
 
     def destroy(self):
         self.wd.quit()
