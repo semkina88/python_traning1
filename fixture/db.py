@@ -1,4 +1,6 @@
 import pymysql.cursors
+
+from model.class_for_test import Contact
 from model.class_for_test import Group
 
 
@@ -13,10 +15,10 @@ class DbFixture:
                                           user=user,
                                           password=password,
                                           database=name,
-                                          autocommit=True  # кеш во время кадого запроса будет сбрасываться
+                                          autocommit=True
                                           )
 
-    def get_group_list(self):  # загружает объекты из базы данных
+    def get_group_list(self):
         list = []
         cursor = self.connection.cursor()
         try:
@@ -24,6 +26,23 @@ class DbFixture:
             for row in cursor:
                 (id, name, header, footer) = row
                 list.append(Group(id=str(id), name=name, header=header, footer=footer))
+        finally:
+            cursor.close()
+        return list
+
+    def destroy(self):
+        self.connection.close()
+
+    def get_contact_list(self):
+        list = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(
+                "select id, firstname, lastname, address, home, mobile, work, email from addressbook where deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, firstname, lastname, address, home_phone, cell_phone, work_phone, email) = row
+                list.append(Contact(id=str(id), firstname=firstname, lastname=lastname, home_phone=home_phone,
+                                    cell_phone=cell_phone, work_phone=work_phone, address=address, email=email))
         finally:
             cursor.close()
         return list

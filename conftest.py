@@ -1,8 +1,10 @@
 import importlib
 import json
 import os.path
+
 import jsonpickle
 import pytest
+
 from fixture.application import Application
 from fixture.db import DbFixture
 
@@ -15,7 +17,7 @@ def load_config(file):
     if target is None:
         config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
         with open(config_file) as f:
-            tagret = json.load(f)
+            target = json.load(f)
     return target
 
 
@@ -40,6 +42,9 @@ def db(request):
     return dbfixture
 
 
+@pytest.fixture
+def check_ui(request):
+    return request.config.getoption("--check_ui")
 
 @pytest.fixture(scope="session", autouse=True)
 def stop(request):
@@ -54,6 +59,7 @@ def stop(request):
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
     parser.addoption("--target", action="store", default="target.json")
+    parser.addoption("--check_ui", action="store_true")
 
 
 def pytest_generate_tests(metafunc):

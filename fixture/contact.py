@@ -1,7 +1,9 @@
-from model.class_for_test import Contact
-from selenium.webdriver.common.by import By
-from random import randrange
 import re
+
+from selenium.webdriver.common.by import By
+
+from model.class_for_test import Contact
+
 
 class ContactHelper:
     def __init__(self, app):
@@ -68,33 +70,50 @@ class ContactHelper:
         self.open_home_page()
         self.contact_cache = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(id)
+        wd.find_element(By.CSS_SELECTOR, 'input[value="Delete"]').click()
+        wd.switch_to.alert.accept()
+        self.open_home_page()
+        self.contact_cache = None
+
     def open_contact_view_by_index(self, index):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_element("xpath", "//img[@alt='Details']").click()
-        # row = wd.find_elements(By.CSS_SELECTOR, "tr[name = 'entry']")[index]
-        # cell = row.find_elements(By.TAG_NAME, "td")[6]
-        # cell.find_elements(By.TAG_NAME, "a").click()
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_elements("name","selected[]")[index].click()
+        wd.find_elements("name", "selected[]")[index].click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
 
     def select_first_contact(self, wd):
         wd = self.app.wd
         wd.find_element("name", "selected[]").click()
 
-
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
-    def modify_contact_by_index(self, index, new_contact_data):
+    def modify_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.open_home_page()
         self.find_modify_button_by_index(index)
         # self.select_contact_by_index(index)
         # wd.find_element("xpath", "//img[@alt='Edit']").click()
+        self.fill_contact_form(contact)
+        wd.find_element("name", "update").click()
+        self.return_home_page()
+        self.contact_cache = None
+
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        self.open_home_page()
+        self.find_modify_button_by_id(id)
         self.fill_contact_form(new_contact_data)
         wd.find_element("name", "update").click()
         self.return_home_page()
@@ -103,6 +122,10 @@ class ContactHelper:
     def find_modify_button_by_index(self, index):
         wd = self.app.wd
         wd.find_elements(By.CSS_SELECTOR, 'img[title="Edit"]')[index].click()
+
+    def find_modify_button_by_id(self, id):
+        wd = self.app.wd
+        wd.find_elements("xpath", "//a[@href ='edit.php?id=%s']" % id).click()
 
     def return_home_page(self):
         wd = self.app.wd

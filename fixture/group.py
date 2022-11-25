@@ -1,5 +1,7 @@
-from model.class_for_test import Group
 from selenium.webdriver.common.by import By
+
+from model.class_for_test import Group
+
 
 class GroupHelper:
     def __init__(self, app):
@@ -46,6 +48,19 @@ class GroupHelper:
         self.return_to_groups_page()
         self.group_cache = None
 
+    def modify_group_by_id(self, id, new_group_data):
+        wd = self.app.wd
+        self.open_group_page()
+        self.select_group_by_id(id)
+        # open modification form
+        wd.find_element("name", "edit").click()
+        # fill group form
+        self.fill_group_form(new_group_data)
+        # submit modification
+        wd.find_element("name", "update").click()
+        self.return_to_groups_page()
+        self.group_cache = None
+
     def change_field_value(self, field_name, text):
         wd = self.app.wd
         if text is not None:
@@ -64,16 +79,28 @@ class GroupHelper:
         wd.find_element(By.CSS_SELECTOR, 'input[name="delete"]').click()
         self.return_to_groups_page()
         self.group_cache = None
+
+    def delete_group_by_id(self, id):
+        wd = self.app.wd
+        self.open_group_page()
+        self.select_group_by_id(id)
+        # submit deletion
+        wd.find_element(By.CSS_SELECTOR, 'input[name="delete"]').click()
+        self.return_to_groups_page()
+        self.group_cache = None
+
     def select_group_by_index(self, index):
         wd = self.app.wd
         wd.find_elements("name", "selected[]")[index].click()
 
+    def select_group_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
 
     def open_group_page(self):
         wd = self.app.wd
-        if not (wd.current_url.endswith("/group.php") and len (wd.find_elements("name", "new")) > 0):
+        if not (wd.current_url.endswith("/group.php") and len(wd.find_elements("name", "new")) > 0):
             wd.find_element("link text", "groups").click()
-
 
     def count(self):
         wd = self.app.wd
