@@ -8857,3 +8857,175 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: http://l
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
 1669619346824	Marionette	INFO	Stopped listening on port 52428
 JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953709
+1669622249716	geckodriver	INFO	Listening on 127.0.0.1:61349
+1669622252681	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61350" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilesPagQK"
+1669622253232	Marionette	INFO	Marionette enabled
+1669622253241	Marionette	INFO	Listening on port 61369
+Read port: 61369
+WebDriver BiDi listening on ws://127.0.0.1:61350
+1669622253488	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilesPagQK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61350/devtools/browser/2a69ad71-faf0-4d00-a218-955a76e1a6ca
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669622279218	Marionette	INFO	Stopped listening on port 61369
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953721
+1669622398219	geckodriver	INFO	Listening on 127.0.0.1:61527
+1669622401176	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61528" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilexUF9VZ"
+1669622401549	Marionette	INFO	Marionette enabled
+1669622401555	Marionette	INFO	Listening on port 61537
+Read port: 61537
+WebDriver BiDi listening on ws://127.0.0.1:61528
+1669622401752	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilexUF9VZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61528/devtools/browser/a96bc384-aa45-4d7a-8c63-01b446d2a3e4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669622424239	Marionette	INFO	Stopped listening on port 61537
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953727
+1669622524105	geckodriver	INFO	Listening on 127.0.0.1:61700
+1669622527048	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61701" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilehZFe9I"
+1669622527731	Marionette	INFO	Marionette enabled
+1669622527741	Marionette	INFO	Listening on port 61712
+Read port: 61712
+WebDriver BiDi listening on ws://127.0.0.1:61701
+1669622528169	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilehZFe9I\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61701/devtools/browser/0ab09f13-8c9c-4a98-a27e-4e442076fcb2
+1669622809175	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionettconsole.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileUgVF9N\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:61891/devtools/browser/316b5233-3ec6-4ac5-b15c-975dd8b0844f
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669622813442	Marionette	INFO	Stopped listening on port 61903
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953733
+Promise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622812564	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622815943	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622816710	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622819388	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622820136	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622822957	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:220:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:205:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1669622823703	Marionette	WARN	TimedPromise timed out after 51669622826202	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62003" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilekA7pjW"
+1669622826657	Marionette	INFO	Marionette enabled
+1669622826664	Marionette	INFO	Listening on port 62018
+Read port: 62018
+WebDriver BiDi listening on ws://127.0.0.1:62003
+1669622826919	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilekA7pjW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62003/devtools/browser/9001b64d-f488-428f-a315-d18600eac08a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669622832959	Marionette	INFO	Stopped listening on port 62018
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953707
+1669622863070	geckodriver	INFO	Listening on 127.0.0.1:62075
+1669622866019	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62076" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileEPUsSg"
+1669622866402	Marionette	INFO	Marionette enabled
+1669622866408	Marionette	INFO	Listening on port 62085
+Read port: 62085
+WebDriver BiDi listening on ws://127.0.0.1:62076
+1669622866601	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileEPUsSg\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62076/devtools/browser/cfce88a1-8de4-47b6-9782-899781b3d4c1
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669622873752	Marionette	INFO	Stopped listening on port 62085
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953733
+1669623089040	geckodriver	INFO	Listening on 127.0.0.1:62230
+1669623091986	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62231" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileOQNiDU"
+1669623092476	Marionette	INFO	Marionette enabled
+1669623092486	Marionette	INFO	Listening on port 62252
+Read port: 62252
+WebDriver BiDi listening on ws://127.0.0.1:62231
+1669623092764	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileOQNiDU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62231/devtools/browser/15d1389c-b1ec-4124-a908-b763fc1c977c
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669623102248	Marionette	INFO	Stopped listening on port 62252
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953733
+1669623261679	geckodriver	INFO	Listening on 127.0.0.1:62372
+1669623264592	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62373" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileIoLQAy"
+1669623264988	Marionette	INFO	Marionette enabled
+1669623264994	Marionette	INFO	Listening on port 62382
+Read port: 62382
+WebDriver BiDi listening on ws://127.0.0.1:62373
+1669623265201	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileIoLQAy\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62373/devtools/browser/f361df82-4cc2-4633-a6cb-e1c1a222674e
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669623269324	Marionette	INFO	Stopped listening on port 62382
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953707
+1669623299009	geckodriver	INFO	Listening on 127.0.0.1:62430
+1669623301953	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62431" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilebGycEa"
+1669623302366	Marionette	INFO	Marionette enabled
+1669623302373	Marionette	INFO	Listening on port 62448
+Read port: 62448
+WebDriver BiDi listening on ws://127.0.0.1:62431
+1669623302571	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofilebGycEa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62431/devtools/browser/3231dfc3-0d13-4a80-ac78-f9b2b3d5e732
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669623306244	Marionette	INFO	Stopped listening on port 62448
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953731
+1669623387927	geckodriver	INFO	Listening on 127.0.0.1:62525
+1669623390850	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62526" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileQy2nZo"
+1669623391247	Marionette	INFO	Marionette enabled
+1669623391253	Marionette	INFO	Listening on port 62546
+Read port: 62546
+WebDriver BiDi listening on ws://127.0.0.1:62526
+1669623391482	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileQy2nZo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62526/devtools/browser/49ef1aef-f184-4061-9529-ec9f03fe4afc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669623395862	Marionette	INFO	Stopped listening on port 62546
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953728
+[Parent 22072, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:746
+1669623452894	geckodriver	INFO	Listening on 127.0.0.1:62639
+1669623455805	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62640" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileKevwia"
+1669623456239	Marionette	INFO	Marionette enabled
+1669623456245	Marionette	INFO	Listening on port 62649
+Read port: 62649
+WebDriver BiDi listening on ws://127.0.0.1:62640
+1669623456444	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\836D~1\\AppData\\Local\\Temp\\rust_mozprofileKevwia\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62640/devtools/browser/37184f6d-d9a0-495b-9dbb-80dae3ddd9df
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1669623460723	Marionette	INFO	Stopped listening on port 62649
+JavaScript error: resource://gre/modules/ConduitsChild.jsm, line 112: Error: sendRemoveListener on closed conduit sba4b_firefox_quantum@checkpoint.com.137438953733
+JavaScript error: resource://devtools/client/jsonview/Sniffer.sys.mjs, line 50: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIChannel.contentType]
+[Parent 31152, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:746
