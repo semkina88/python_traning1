@@ -8,7 +8,7 @@ def test_modify_group_name(app, db, check_ui):
         app.group.create(Group(name="test"))
     old_groups = db.get_group_list()
     index = randrange(len(old_groups))
-    group = Group(name="New group")
+    group = Group(name="New group12")
     group.id = old_groups[index].id
     app.group.modify_group_by_index(index, group)
     new_groups = db.get_group_list()
