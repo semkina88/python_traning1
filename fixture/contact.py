@@ -113,7 +113,8 @@ class ContactHelper:
     def modify_contact_by_id(self, id, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
-        self.find_modify_button_by_id(id)
+        self.select_contact_by_id(id)
+        wd.find_element(By.CSS_SELECTOR, 'img[alt="Edit"]').click()
         self.fill_contact_form(new_contact_data)
         wd.find_element("name", "update").click()
         self.return_home_page()
@@ -123,9 +124,11 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements(By.CSS_SELECTOR, 'img[title="Edit"]')[index].click()
 
-    def find_modify_button_by_id(self, id):
+    def select_contact_by_id(self, id):
         wd = self.app.wd
-        wd.find_elements("xpath", "//a[@href ='edit.php?id=%s']" % id).click()
+        wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
+
+        # wd.find_elements("xpath", "//a[@href ='edit.php?id=%s']" % id).click()
 
     def return_home_page(self):
         wd = self.app.wd
@@ -186,8 +189,22 @@ class ContactHelper:
         work_phone = re.search("W: (.*)", text).group(1) if "M: " in text else ""
         secondary_phone = re.search("P: (.*)", text).group(1) if "P: " in text else ""
         content = wd.find_element("id", "content")
-        emails = [i.text for i in content.find_elements(By.TAG_NAME,"a")]
+        emails = [i.text for i in content.find_elements(By.TAG_NAME, "a")]
         while len(emails) < 3:
             emails.append("")
         return Contact(home_phone=home_phone, cell_phone=cell_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
+
+    # def add_contact_by_id_in_group(self, user, group):
+    #     wd = self.app.wd
+    #     self.app.open_home_page()
+    #     wd.find_element_by_css_selector("input[value='%s']" % user.id).click()
+    #     wd.find_element_by_xpath("//select[@name='to_group']/option[@value='%s']" % group.id).click()
+    #     wd.find_element_by_name('add').click()
+    #
+    # def append_contact(self, contacts, old_contacts_in_group, contacts_not_in_group):
+    #     wd = self.app.wd
+    #     self.app.open_home_page()
+    #     for contact in contacts:
+    #         if contact not in old_contacts_in_group:
+    #             contacts_not_in_group.append(contact)
