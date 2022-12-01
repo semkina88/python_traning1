@@ -195,6 +195,12 @@ class ContactHelper:
         return Contact(home_phone=home_phone, cell_phone=cell_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
+    def merge_phones_like_on_home_page(self):
+        pass
+
+    def merge_emails_like_on_home_page(self):
+        pass
+
     # def add_contact_by_id_in_group(self, user, group):
     #     wd = self.app.wd
     #     self.app.open_home_page()
