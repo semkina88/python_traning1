@@ -99,22 +99,23 @@ class ContactHelper:
     def modify_first_contact(self):
         self.modify_contact_by_index(0)
 
-    def modify_contact_by_index(self, index, contact):
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
         self.find_modify_button_by_index(index)
         # self.select_contact_by_index(index)
         # wd.find_element("xpath", "//img[@alt='Edit']").click()
-        self.fill_contact_form(contact)
+        self.fill_contact_form(new_contact_data)
         wd.find_element("name", "update").click()
         self.return_home_page()
         self.contact_cache = None
 
-    def modify_contact_by_id(self, id, new_contact_data):
+    def modify_contact_by_id(self, index, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
-        self.select_contact_by_id(id)
-        wd.find_element(By.CSS_SELECTOR, 'img[alt="Edit"]').click()
+        # self.select_contact_by_id(id)
+        wd.find_element("xpath", "//a[@href ='edit.php?id=%s']" % index).click()
+        # wd.find_elements(By.CSS_SELECTOR, 'img[title="Edit"]')[index].click()
         self.fill_contact_form(new_contact_data)
         wd.find_element("name", "update").click()
         self.return_home_page()
@@ -124,12 +125,10 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements(By.CSS_SELECTOR, 'img[title="Edit"]')[index].click()
 
-    def select_contact_by_id(self, id):
-        wd = self.app.wd
-        wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
-
-        # wd.find_elements("xpath", "//a[@href ='edit.php?id=%s']" % id).click()
-
+    # def select_contact_by_id(self, id):
+    #     wd = self.app.wd
+    #     wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
+    #
     def return_home_page(self):
         wd = self.app.wd
         wd.find_element("link text", "home page").click()
@@ -195,22 +194,34 @@ class ContactHelper:
         return Contact(home_phone=home_phone, cell_phone=cell_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
-    def merge_phones_like_on_home_page(self):
-        pass
+    # def get_contacts_in_group_list(self):
+    #      wd = self.app.wd
+    #      wd.find_element("link text", "groups").click()
 
-    def merge_emails_like_on_home_page(self):
-        pass
+    def select_group_by_id(self, id):
+        wd = self.app.wd
+        # wd.find_element("name", "to_group").click()
+        wd.find_element(By.CSS_SELECTOR, "[value='%s']" % id).click()
 
-    # def add_contact_by_id_in_group(self, user, group):
-    #     wd = self.app.wd
-    #     self.app.open_home_page()
-    #     wd.find_element_by_css_selector("input[value='%s']" % user.id).click()
-    #     wd.find_element_by_xpath("//select[@name='to_group']/option[@value='%s']" % group.id).click()
-    #     wd.find_element_by_name('add').click()
-    #
+    def add_contact_to_group(self, id, group_id):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_contact_by_id(id)
+        wd.find_element("name", "to_group").click()
+        self.select_group_by_id(id)
+        wd.find_element("name", "add").click()
+        self.contact_cache = None
+
     # def append_contact(self, contacts, old_contacts_in_group, contacts_not_in_group):
     #     wd = self.app.wd
     #     self.app.open_home_page()
     #     for contact in contacts:
     #         if contact not in old_contacts_in_group:
     #             contacts_not_in_group.append(contact)
+#
+# def del_contact_by_id_from_group(self, user, group):
+#      wd = self.app.wd
+#      self.app.open_home_page()
+#      wd.find_element("xpath", "//select[@name='group']/option[@value='%s']" % group.id).click()
+#      wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % user.id).click()
+#      wd.find_element("name", 'remove').click()
