@@ -5,38 +5,40 @@ from model.class_for_test import Contact
 
 
 def test_modify_contact_firstname(app, db, check_ui):
+    # если контактов нет создадим контакт
     if len(db.get_contact_list()) == 0:
         app.contact.create(Contact(firstname="bla"))
+    # получаем текущий список контактов из бд
     old_contacts = db.get_contact_list()
-    index = randrange(len(old_contacts))
+
+    # Создадим сущность контакт с определенным именем
     contact = Contact(firstname="kjgu")
-    selection = random.choice(old_contacts)
+    # выбиарем слуйное число по длине списка контактов
+    index = randrange(len(old_contacts))
+    # Присвоим созданной сущности id выбранного контакт из списка
     contact.id = old_contacts[index].id
-    app.contact.modify_contact_by_id(selection.id, contact)
+    # Через интерфейс изменим имя для выбранного контакта
+    app.contact.modify_contact_by_id(contact.id, contact)
+    # Получим актуальный список контактов из бд
     new_contacts = db.get_contact_list()
-    old_contacts[index] = contact
-    old_contacts[index].id = new_contacts[index].id
-    old_contacts[index].firstname = new_contacts[index].firstname
-    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+    # Проведем сравнение имен для имеющейся сущности и контакта из актуального списка с известным id
+    contact.firstname == new_contacts[index].firstname
+    # Установим флаг для проведения проверки
+    check_ui = True
     if check_ui:
+        # проверим состав списков
         assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
-# def test_modify_contact_firstname(app, db, check_ui):
-#     if len(db.get_contact_list()) == 0:
-#         app.contact.create(Contact(firstname="bla"))
-#     old_contacts = db.get_contact_list()
-#     selection = random.choice(old_contacts)
-#     contact = Contact(firstname="olalal")
-#     index = 0
-#     n = len(old_contacts)
-#     for i in range(n):
-#         if old_contacts[i].id == selection.id:
-#             index = i
-#     app.contact.modify_contact_by_id(selection.id, contact)
-#     new_contacts = db.get_contact_list()
-#     old_contacts[index] = contact
-#     assert len(old_contacts) == len(new_contacts)
-#     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-#     if check_ui:
-#         assert sorted(new_contacts, key=Contact.id_or_max) == sorted(app.group.get_contact_list(),
-#                                                                      key=Contact.id_or_max)
+
+    # selection = random.choice(old_contacts)
+    # contact.id = old_contacts[index].id
+    # app.contact.modify_contact_by_id(selection.id, contact)
+    # new_contacts = db.get_contact_list()
+    # old_contacts[index] = contact
+    # old_contacts[index].id = new_contacts[index].id
+    # old_contacts[index].firstname = new_contacts[index].firstname
+    # assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+    # if check_ui:
+    #     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+
+
