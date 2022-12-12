@@ -219,9 +219,9 @@ class ContactHelper:
     #         if contact not in old_contacts_in_group:
     #             contacts_not_in_group.append(contact)
 #
-# def del_contact_by_id_from_group(self, user, group):
-#      wd = self.app.wd
-#      self.app.open_home_page()
-#      wd.find_element("xpath", "//select[@name='group']/option[@value='%s']" % group.id).click()
-#      wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % user.id).click()
-#      wd.find_element("name", 'remove').click()
+    def del_contact_by_id_from_group(self, user, group):
+         wd = self.app.wd
+         self.app.open_home_page()
+         wd.find_element("xpath", "//select[@name='group']/option[@value='%s']" % group.id).click()
+         wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % user.id).click()
+         wd.find_element("name", 'remove').click()

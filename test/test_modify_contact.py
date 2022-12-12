@@ -1,4 +1,3 @@
-import random
 from random import randrange
 
 from model.class_for_test import Contact
@@ -24,7 +23,6 @@ def test_modify_contact_firstname(app, db, check_ui):
     # Проведем сравнение имен для имеющейся сущности и контакта из актуального списка с известным id
     contact.firstname == new_contacts[index].firstname
     # Установим флаг для проведения проверки
-    check_ui = True
     if check_ui:
         # проверим состав списков
         assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)

@@ -55,6 +55,16 @@ def stop(request):
     request.addfinalizer(fin)
     return fixture
 
+# def setup_module(module):
+#     try:
+#         db.bind('sqlite', ':memory:')
+#     except TypeError:
+#         pass
+#     else:
+#         db.generate_mapping(check_tables=False)
+#
+#     db.drop_all_tables(with_all_data=True)
+#     db.create_tables()
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
