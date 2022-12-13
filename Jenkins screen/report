@@ -1,0 +1,62 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\Tools\workspace\addressbook tests
+The recommended git tool is: NONE
+No credentials specified
+ > C:\Program Files\Git\bin\git.exe rev-parse --resolve-git-dir C:\Tools\workspace\addressbook tests\.git # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/semkina88/python_traning1 # timeout=10
+Fetching upstream changes from https://github.com/semkina88/python_traning1
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > git --version # 'git version 2.33.0.windows.2'
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/semkina88/python_traning1 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 919974a6168d7ad1f47a00967a5b5f915952cbbb (refs/remotes/origin/main)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f 919974a6168d7ad1f47a00967a5b5f915952cbbb # timeout=10
+Commit message: "добавление файла requirements.txt"
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk 919974a6168d7ad1f47a00967a5b5f915952cbbb # timeout=10
+[addressbook tests] $ cmd.exe /c call C:\Users\836D~1\AppData\Local\Temp\shiningpanda8648451564797370059.bat
+
+C:\Tools\workspace\addressbook tests>pip install -r requirements.txt
+Requirement already satisfied: pytest in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 1)) (7.2.0)
+Requirement already satisfied: selenium==3.141.0 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 2)) (3.141.0)
+Requirement already satisfied: jsonpickle in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 3)) (3.0.0)
+Requirement already satisfied: pony in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 4)) (0.7.16)
+Requirement already satisfied: pymysql in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 5)) (1.0.2)
+Requirement already satisfied: mysql-connector-python-rf in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 6)) (2.2.2)
+Requirement already satisfied: allure-pytest in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 7)) (2.12.0)
+Requirement already satisfied: urllib3 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from selenium==3.141.0->-r requirements.txt (line 2)) (1.26.13)
+Requirement already satisfied: colorama in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: pluggy<2.0,>=0.12 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.0.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.0.4)
+Requirement already satisfied: attrs>=19.2.0 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (22.1.0)
+Requirement already satisfied: tomli>=1.0.0 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (2.0.1)
+Requirement already satisfied: iniconfig in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.1.1)
+Requirement already satisfied: packaging in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (22.0)
+Requirement already satisfied: allure-python-commons==2.12.0 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from allure-pytest->-r requirements.txt (line 7)) (2.12.0)
+Requirement already satisfied: six>=1.9.0 in c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from allure-pytest->-r requirements.txt (line 7)) (1.16.0)
+
+C:\Tools\workspace\addressbook tests>py.test test\test_add_group.py
+============================= test session starts =============================
+platform win32 -- Python 3.9.0, pytest-7.2.0, pluggy-1.0.0
+rootdir: C:\Tools\workspace\addressbook tests
+plugins: allure-pytest-2.12.0
+collected 4 items
+
+test\test_add_group.py ....                                              [100%]
+
+============================== warnings summary ===============================
+test/test_add_group.py: 136 warnings
+  c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages\selenium\webdriver\remote\remote_connection.py:418: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTResponse.headers.get(name, default).
+    if resp.getheader('Content-Type') is not None:
+
+test/test_add_group.py: 136 warnings
+  c:\tools\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages\selenium\webdriver\remote\remote_connection.py:419: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTResponse.headers.get(name, default).
+    content_type = resp.getheader('Content-Type').split(';')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 4 passed, 272 warnings in 74.63s (0:01:14) ==================
+
+C:\Tools\workspace\addressbook tests>exit 0
+Finished: SUCCESS
