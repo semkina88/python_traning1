@@ -194,34 +194,44 @@ class ContactHelper:
         return Contact(home_phone=home_phone, cell_phone=cell_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
-    # def get_contacts_in_group_list(self):
-    #      wd = self.app.wd
-    #      wd.find_element("link text", "groups").click()
 
-    def select_group_by_id(self, id):
-        wd = self.app.wd
-        # wd.find_element("name", "to_group").click()
-        wd.find_element(By.CSS_SELECTOR, "[value='%s']" % id).click()
 
-    def add_contact_to_group(self, id, group_id):
+    def select_group_by_id(self, group_id):
         wd = self.app.wd
-        self.open_home_page()
+        # wd.find_element(By.CSS_SELECTOR, "[value='%s']" % id).click()
+        wd.find_element("xpath", f"//select[@name='group']/option[@value='{group_id}']").click()
+
+    def add_contact_to_group(self, group_id, id):
+        wd = self.app.wd
+        self.app.open_home_page()
         self.select_contact_by_id(id)
         wd.find_element("name", "to_group").click()
-        self.select_group_by_id(id)
-        wd.find_element("name", "add").click()
+        self.select_group_by_id(group_id)
+        # wd.find_element("xpath", "//select[@name='to_group']/option[@value='%s']" % group.id).click()
+        wd.find_element("name", 'add').click()
+
+        #         wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
+        # wd.find_element("name", "to_group").click()
+        # self.select_group_by_id(id)
+        # wd.find_element("name", "add").click()
+        # wd.find_element("xpath", "//a[@href='./?group=%s']" % group_id).click()
         self.contact_cache = None
 
-    # def append_contact(self, contacts, old_contacts_in_group, contacts_not_in_group):
-    #     wd = self.app.wd
-    #     self.app.open_home_page()
-    #     for contact in contacts:
-    #         if contact not in old_contacts_in_group:
-    #             contacts_not_in_group.append(contact)
 #
-    def del_contact_by_id_from_group(self, user, group):
+    def del_contact_from_group(self, id, group_id):
          wd = self.app.wd
          self.app.open_home_page()
-         wd.find_element("xpath", "//select[@name='group']/option[@value='%s']" % group.id).click()
-         wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % user.id).click()
+         wd.find_element("xpath", "//select[@name='group']/option[@value='%s']" % group_id).click()
+         self.select_contact_by_id(id)
          wd.find_element("name", 'remove').click()
+         # wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % user.id).click()
+         wd.find_element("xpath", "//a[@href='./?group=%s']" % group_id).click()
+         self.contact_cache = None
+
+
+    def append_contact(self, contacts, old_contacts_in_group, contacts_not_in_group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        for contact in contacts:
+            if contact not in old_contacts_in_group:
+                contacts_not_in_group.append(contact)
