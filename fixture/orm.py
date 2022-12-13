@@ -1,5 +1,4 @@
 from pony.orm import *
-
 from model.class_for_test import Contact
 from model.class_for_test import Group
 
@@ -29,7 +28,7 @@ class ORMFixture:
     def __init__(self, host, name, user, password):
         self.db.bind('mysql', host=host, database=name, user=user, password=password)
         self.db.generate_mapping()
-        sql_debug(True)
+        # sql_debug(True)
 
     def convert_groups_to_model(self, groups):
         def convert(group):

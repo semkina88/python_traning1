@@ -9,9 +9,8 @@ def test_modify_contact_firstname(app, db, check_ui):
         app.contact.create(Contact(firstname="bla"))
     # получаем текущий список контактов из бд
     old_contacts = db.get_contact_list()
-
     # Создадим сущность контакт с определенным именем
-    contact = Contact(firstname="kjgu")
+    contact = Contact(firstname="swyug")
     # выбиарем слуйное число по длине списка контактов
     index = randrange(len(old_contacts))
     # Присвоим созданной сущности id выбранного контакт из списка
@@ -26,17 +25,5 @@ def test_modify_contact_firstname(app, db, check_ui):
     if check_ui:
         # проверим состав списков
         assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-
-
-    # selection = random.choice(old_contacts)
-    # contact.id = old_contacts[index].id
-    # app.contact.modify_contact_by_id(selection.id, contact)
-    # new_contacts = db.get_contact_list()
-    # old_contacts[index] = contact
-    # old_contacts[index].id = new_contacts[index].id
-    # old_contacts[index].firstname = new_contacts[index].firstname
-    # assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-    # if check_ui:
-    #     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
 
 

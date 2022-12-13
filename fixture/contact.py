@@ -1,7 +1,6 @@
 import re
 
 from selenium.webdriver.common.by import By
-
 from model.class_for_test import Contact
 
 
@@ -199,22 +198,16 @@ class ContactHelper:
     def select_group_by_id(self, group_id):
         wd = self.app.wd
         # wd.find_element(By.CSS_SELECTOR, "[value='%s']" % id).click()
-        wd.find_element("xpath", f"//select[@name='group']/option[@value='{group_id}']").click()
+        # wd.find_element("name", "to_group").click()
+        wd.find_element("xpath", f"//select[@name='to_group']/option[@value='{group_id}']").click()
 
-    def add_contact_to_group(self, group_id, id):
+
+    def add_contact_to_group(self, id, group_id):
         wd = self.app.wd
         self.app.open_home_page()
         self.select_contact_by_id(id)
-        wd.find_element("name", "to_group").click()
         self.select_group_by_id(group_id)
-        # wd.find_element("xpath", "//select[@name='to_group']/option[@value='%s']" % group.id).click()
         wd.find_element("name", 'add').click()
-
-        #         wd.find_element(By.CSS_SELECTOR, "input[value='%s']" % id).click()
-        # wd.find_element("name", "to_group").click()
-        # self.select_group_by_id(id)
-        # wd.find_element("name", "add").click()
-        # wd.find_element("xpath", "//a[@href='./?group=%s']" % group_id).click()
         self.contact_cache = None
 
 #

@@ -1,0 +1,10 @@
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group1","group1_header","group1_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group2","group2_header","group2_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group3","group3_header","group3_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group4","group4_header","group4_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group5","group5_header","group5_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group6","group6_header","group6_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group7","group7_header","group7_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group8","group8_header","group8_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group9","group9_header","group9_footer");
+INSERT INTO `group_list` (`group_name`,`group_header`,`group_footer`) VALUES ("group10","group10_header","group10_footer");
